@@ -22,8 +22,11 @@ while first or input("Van még file? (igen/nem)") == "igen":
     # minta: CREATE TABLE tableName (id INT, name VARCHAR(255), ev VARCHAR(255))
     out += f"\nCREATE TABLE {tableName} ("
     for i in range(len(colNames)):
+
         out += f"{colNames[i]} {colTypes[i].upper()}"
         if i == primaryKey: out += " PRIMARY KEY"
+        else: out += " NULL" # alapvetően fogadja el a NULL értéket
+
         if i != len(colNames)-1:
             out += ", "
         else: # ha utolsó oszlop, zárójel bezárása és újsor
