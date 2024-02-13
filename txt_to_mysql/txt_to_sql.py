@@ -9,8 +9,8 @@ out += f"USE `{databaseName}`;\n" #adatbázis használata
 first = True
 while first or input("Van még file? (igen/nem)") == "igen":
     first = False
-    fileName = location + input("Adja meg a beolvasni kívánt file nevét (pl: file.txt): ")
-    lines = [x.strip().split("\t") for x in open(fileName, "r", encoding="utf-8").readlines()]
+    fileName = input("Adja meg a beolvasni kívánt file nevét (pl: file.txt): ")
+    lines = [x.strip().split("\t") for x in open(location+fileName, "r", encoding="utf-8").readlines()]
     rows = lines[1:]
     colNames = lines[0]
 
